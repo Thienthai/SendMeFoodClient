@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_orders"
+        android:icon="@drawable/ic_border_color_black_24dp"
+        android:orderInCategory="100"
+        android:title="Orders"
+        />
+    <item
+        android:id="@+id/nav_cart"
+        android:icon="@drawable/ic_local_grocery_store_black_24dp"
+        android:orderInCategory="100"
+        android:title="Cart"
+        />
+    <item
+        android:id="@+id/sign_out"
+        android:icon="@drawable/ic_keyboard_return_black_24dp"
+        android:orderInCategory="100"
+        android:title="Sign out"
+        />
+</menu>
