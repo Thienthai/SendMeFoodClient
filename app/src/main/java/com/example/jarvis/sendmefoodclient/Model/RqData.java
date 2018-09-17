@@ -9,17 +9,27 @@ public class RqData {
     private List<Orders> orders;
     private String status;
     private String name;
+    private String owner;
 
     public RqData() {
     }
 
-    public RqData(String numbers, String address, String sum, List<Orders> orders, String name,String status) {
+    public RqData(String numbers, String address, String sum, List<Orders> orders, String name,String status,String owner) {
         this.numbers = numbers;
         this.address = address;
         this.sum = sum;
         this.orders = orders;
         this.name = name;
         this.status = status;
+        this.owner = owner;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public String getStatus() {

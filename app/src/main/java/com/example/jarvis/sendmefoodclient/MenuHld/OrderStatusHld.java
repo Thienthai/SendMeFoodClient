@@ -10,7 +10,7 @@ import com.example.jarvis.sendmefoodclient.R;
 
 public class OrderStatusHld extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnCreateContextMenuListener {
 
-    public TextView order_id,order_status,order_phone,order_address;
+    public TextView order_id,order_name,order_status,order_phone,order_address;
 
     ListenerClck listenerClck;
 
@@ -18,6 +18,7 @@ public class OrderStatusHld extends RecyclerView.ViewHolder implements View.OnCl
         super(itemView);
 
         order_id = itemView.findViewById(R.id.order_status_item_name);
+        order_name = itemView.findViewById(R.id.order_food_item_name);
         order_status = itemView.findViewById(R.id.order_item_stat);
         order_phone = itemView.findViewById(R.id.order_status_phone);
         order_address = itemView.findViewById(R.id.order_stat_address);

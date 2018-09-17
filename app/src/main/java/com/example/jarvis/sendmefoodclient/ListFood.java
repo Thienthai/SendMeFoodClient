@@ -181,7 +181,8 @@ public class ListFood extends AppCompatActivity {
                                             txtDescip.getText().toString(),
                                             CatId,
                                             txtPrice.getText().toString(),
-                                            txtDiscnt.getText().toString()
+                                            txtDiscnt.getText().toString(),
+                                            Current.usrCurrent.getNumber()
                                     );
 
                                 }

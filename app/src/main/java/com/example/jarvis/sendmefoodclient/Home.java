@@ -79,13 +79,13 @@ public class Home extends AppCompatActivity
 
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.my_fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialShw();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.my_fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                dialShw();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -281,6 +281,8 @@ public class Home extends AppCompatActivity
             Intent intent = new Intent(Home.this,OrderBoard.class);
             startActivity(intent);
         } else if (id == R.id.nav_cart) {
+            Intent intent = new Intent(Home.this,MyFoodList.class);
+            startActivity(intent);
 
         }
 

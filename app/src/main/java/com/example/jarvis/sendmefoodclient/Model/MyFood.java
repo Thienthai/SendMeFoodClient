@@ -1,19 +1,28 @@
 package com.example.jarvis.sendmefoodclient.Model;
 
 public class MyFood {
-    private String Name,Image,Description,MenuId,Price,Discount;
+    private String Name,Image,Description,MenuId,Price,Discount,Owner;
 
     public MyFood() {
 
     }
 
-    public MyFood(String name, String image, String description, String menuId,String price,String discount) {
+    public MyFood(String name, String image, String description, String menuId,String price,String discount,String owner) {
         Name = name;
         Image = image;
         Description = description;
         MenuId = menuId;
         Price = price;
         Discount = discount;
+        Owner = owner;
+    }
+
+    public String getOwner() {
+        return Owner;
+    }
+
+    public void setOwner(String owner) {
+        Owner = owner;
     }
 
     public String getDiscount() {
