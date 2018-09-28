@@ -177,13 +177,14 @@ public class ListFood extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     myNewFood = new MyFood(
                                             txtName.getText().toString(),
-                                            myUri.toString(),
+                                            uri.toString(),
                                             txtDescip.getText().toString(),
                                             CatId,
                                             txtPrice.getText().toString(),
                                             txtDiscnt.getText().toString(),
                                             Current.usrCurrent.getNumber()
                                     );
+                                    Toast.makeText(ListFood.this,uri.toString(),Toast.LENGTH_SHORT).show();
 
                                 }
                             });

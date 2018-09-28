@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.jarvis.sendmefoodclient.Current.Current;
@@ -69,5 +70,13 @@ public class MyFoodList extends AppCompatActivity {
         };
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+        if(item.getTitle().equals("Delete")){
+            db_ref.child(adapter.getRef(item.getOrder()).getKey()).removeValue();
+        }
+        return super.onContextItemSelected(item);
     }
 }

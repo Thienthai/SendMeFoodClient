@@ -284,6 +284,10 @@ public class Home extends AppCompatActivity
             Intent intent = new Intent(Home.this,MyFoodList.class);
             startActivity(intent);
 
+        } else if (id == R.id.sign_out){
+            Intent intent = new Intent(Home.this,Login.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

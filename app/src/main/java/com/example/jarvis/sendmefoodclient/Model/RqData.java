@@ -10,6 +10,7 @@ public class RqData {
     private String status;
     private String name;
     private String owner;
+    private String key;
 
     public RqData() {
     }
@@ -22,6 +23,14 @@ public class RqData {
         this.name = name;
         this.status = status;
         this.owner = owner;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getOwner() {

@@ -14,7 +14,6 @@ public class User {
         this.Name = name;
         this.Password = psswd;
         this.Number = number;
-        IsStaff = "false";
     }
 
     public String getIsStaff() {

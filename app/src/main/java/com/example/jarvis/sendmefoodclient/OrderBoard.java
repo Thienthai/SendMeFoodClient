@@ -81,11 +81,13 @@ public class OrderBoard extends AppCompatActivity {
 
                 for(DataSnapshot data: dataSnapshot.getChildren()){
                     RqData rqDat = data.getValue(RqData.class);
+                    rqDat.setKey(data.getKey());
                     myNewRq.add(rqDat);
                 }
-                RqDataAdapter adapter = new RqDataAdapter(filterData(myNewRq));
+                RqDataAdapter adapter = new RqDataAdapter(filterData(myNewRq),OrderBoard.this);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
+
             }
 
             @Override
@@ -97,12 +99,16 @@ public class OrderBoard extends AppCompatActivity {
 
     }
 
+
+
     private List<RqData> filterData(List<RqData> myRq) {
         List<RqData> myNewData = new ArrayList<>();
+        int key = 0;
         for(RqData rq:myRq){
             for(Orders myOrder:rq.getOrders()){
                 if(myOrder.getOwner().equals(Current.usrCurrent.getNumber())){
                     if(!myNewData.contains(rq)) {
+//                        myOrder.setKey(key);
                         myNewData.add(rq);
                     }
                 }
@@ -113,36 +119,38 @@ public class OrderBoard extends AppCompatActivity {
 //
 //    private void getOrders() {
 //        adapter = new FirebaseRecyclerAdapter<RqData, OrderStatusHld>(
-//                RqData.class,
+//       //                OrderStatusHld.class,
+////                db_ref
+////        ) {
+////            @Override
+////            protected void populateViewHolder(OrderStatusHld viewHolder, RqData model, int position) {
+////                viewHolder.order_id.setText(adapter.getRef(position).getKey());
+////                viewHolder.order_status.setText(Current.statusCode(model.getStatus()));
+////                viewHolder.order_phone.setText(model.getNumbers());
+////                viewHolder.setListenerClck(new ListenerClck() {
+////                    @Override
+////                    public void onClick(int Pos, View view, boolean isClck) {
+////
+////                    }
+////                });
+////            }
+////        };
+////        adapter.notifyDataSetChanged();
+////        recyclerView.setAdapter(adapter);
+////    }         RqData.class,
 //                R.layout.order_status_layout,
-//                OrderStatusHld.class,
-//                db_ref
-//        ) {
-//            @Override
-//            protected void populateViewHolder(OrderStatusHld viewHolder, RqData model, int position) {
-//                viewHolder.order_id.setText(adapter.getRef(position).getKey());
-//                viewHolder.order_status.setText(Current.statusCode(model.getStatus()));
-//                viewHolder.order_phone.setText(model.getNumbers());
-//                viewHolder.setListenerClck(new ListenerClck() {
-//                    @Override
-//                    public void onClick(int Pos, View view, boolean isClck) {
+
 //
-//                    }
-//                });
-//            }
-//        };
-//        adapter.notifyDataSetChanged();
-//        recyclerView.setAdapter(adapter);
-//    }
-//
+
+
 //    @Override
 //    public boolean onContextItemSelected(MenuItem item){
-//        if(item.getTitle().equals("Update")){
-//            updtDialg(adapter.getRef(item.getOrder()).getKey(),adapter.getItem(item.getOrder()));
-//        }else if(item.getTitle().equals("Delete")){
-//            deleteDialg(adapter.getRef(item.getOrder()).getKey());
-//        }
-//        return super.onContextItemSelected(item);
+////        if(item.getTitle().equals("Update")){
+////            updtDialg(adapter.getRef(item.getOrder()).getKey(),adapter.getItem(item.getOrder()));
+////        }else if(item.getTitle().equals("Delete")){
+////            deleteDialg(adapter.getRef(item.getOrder()).getKey());
+////        }
+////        return super.onContextItemSelected(item);
 //    }
 //
 //    private void deleteDialg(String key) {

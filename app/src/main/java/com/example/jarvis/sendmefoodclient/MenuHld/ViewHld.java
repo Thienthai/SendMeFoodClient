@@ -24,7 +24,7 @@ public class ViewHld extends RecyclerView.ViewHolder implements View.OnClickList
         img = (ImageView) itemView.findViewById(R.id.menu_image);
         name_menu = (TextView) itemView.findViewById(R.id.name_menu);
 
-        itemView.setOnCreateContextMenuListener(this);
+//        itemView.setOnCreateContextMenuListener(this);
         itemView.setOnClickListener(this);
     }
 

@@ -40,6 +40,19 @@
         android:textSize="16sp"
         android:typeface="normal" />
 
+    <Button
+        android:id="@+id/biker_regis"
+        android:layout_width="303dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="83dp"
+        android:background="#203591"
+        android:text="Biker Register"
+        android:textColor="#FFF5F2F2"
+        android:textSize="16sp"
+        android:typeface="normal" />
+
     <View
         android:id="@+id/divider"
         android:layout_width="292dp"

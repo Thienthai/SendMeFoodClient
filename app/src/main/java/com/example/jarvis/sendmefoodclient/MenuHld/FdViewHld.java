@@ -24,7 +24,7 @@ public class FdViewHld extends RecyclerView.ViewHolder implements View.OnClickLi
         fd_name = (TextView)itemView.findViewById(R.id.fd_name);
         fd_image = (ImageView)itemView.findViewById(R.id.fd_image);
 
-        itemView.setOnCreateContextMenuListener(this);
+//        itemView.setOnCreateContextMenuListener(this);
         itemView.setOnClickListener(this);
     }
 

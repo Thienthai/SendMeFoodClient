@@ -11,19 +11,27 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button login_page;
+    Button login_page,biker_regis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         login_page = (Button) findViewById(R.id.login_page);
+        biker_regis = (Button) findViewById(R.id.biker_regis);
         login_page.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Login.class);
                 startActivity(intent);
 
+            }
+        });
+        biker_regis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Register.class);
+                startActivity(intent);
             }
         });
     }
